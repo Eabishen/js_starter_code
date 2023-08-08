@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin-inline: auto;
+        }
+
+        .main-wrapper {
+            padding: 1rem;
+            background-color: rgb(228, 245, 252);
+            min-height: 100px;
+        }
+
+        .pills-conatiner {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            /* align-items: baseline; */
+        }
+
+        .pills {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .pills:focus-visible {
+            color: rebeccapurple;
+            border-radius: 5px;
+            box-shadow: 0 0 02px 2px rgb(228, 245, 252), 0 0 0px 04px rebeccapurple;
+        }
+
+        .pills.active {
+            background-color: rebeccapurple;
+            color: #eee;
+            border-radius: 5px;
+        }
+
+        .content {
+            font-size: 18px;
+            display: none;
+        }
+
+        .content.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-wrapper">
+            <nav class="pills-conatiner">
+                <button class="pills active" role="button" aria-label="home" data-pills="home">Home</button>
+                <button class="pills" role="button" aria-label="about" data-pills="about">About</button>
+                <button class="pills" role="button" aria-label="contact" data-pills="contact">Contact</button>
+            </nav>
+            <div class="main-content">
+                <div class="content show" id="content-home">Hi welcome i m Web dev</div>
+                <div class="content" id="content-contact">Contact me at xyz@smail.com</div>
+                <div class="content" id="content-about">I m good at programming i guess!</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

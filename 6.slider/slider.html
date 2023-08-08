@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .pagination {
+            display: flex;
+            margin-top: 2rem;
+            gap: 10px;
+        }
+
+        .bullets {
+            width: 10px;
+            height: 10px;
+            border-radius: 100vmax;
+            border: 1px solid #969696;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .bullets.active {
+            background-color: rebeccapurple;
+        }
+
+        .slider {
+            overflow: hidden;
+            width: 500px;
+            user-select: none;
+
+            /* Adjust the width to fit your desired size */
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .slides img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 05px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* pointer-events: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="prev-btn">
+            <button>left</button>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+
+        </div>
+
+        <div class="next-btn">
+            <button>right</button>
+        </div>
+    </div>
+    <div class="pagination">
+        <div class="bullets active"></div>
+        <div class="bullets"></div>
+        <div class="bullets"></div>
+    </div>
+    
+
+    <script src="slider.js"></script>
+</body>
+
+</html>
